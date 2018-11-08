@@ -2,10 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
 const ExtraPulgin = require('extract-text-webpack-plugin');
-
-const extSass = new ExtraPulgin({
-    filename: '[name].css'
-});
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     devtool: 'inline-source-map',
@@ -19,10 +16,16 @@ module.exports = {
     module: {
         rules: [{
             test: /\.css$/,
-            loader: ExtraPulgin.extract('style-loader', 'css-loader')
+            use: ExtraPulgin.extract({
+                fallback: 'style-loader',
+                use: 'css-loader'
+            })
         }, {
             test: /\.scss$/,
-            loader: ExtraPulgin.extract('style-loader', 'css-loader', 'sass-loader')
+            use: ExtraPulgin.extract({
+                fallback: 'style-loader',
+                use: 'css-loader!sass-loader'
+            })
         }, {
             test: /\.(png|svg|jpg|gif)$/,
             loader: 'url-loader',
@@ -47,7 +50,7 @@ module.exports = {
         new HtmlPlugin({
             template: 'app/index.temp.html'
         }),
-        extSass,
-        new ExtraPulgin('style.css')
+        new ExtraPulgin('style.css'),
+        new CleanWebpackPlugin(['build']),
     ]
 }

@@ -1,0 +1,167 @@
+html {
+  -webkit-text-size-adjust: none
+}
+
+html {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  /* Firefox */
+  -webkit-box-sizing: inherit;
+  /* Safari */
+}
+
+* {
+  border: 0px;
+  margin: 0px;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+button,
+input,
+textarea {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0px;
+}
+
+ol li {
+  list-style: decimal;
+}
+
+dl,
+dt,
+dd,
+form {
+  list-style: none;
+  vertical-align: middle;
+}
+
+body {
+  color: #333;
+  font-size: 13px;
+  font-family: "微软雅黑", "黑体", "Arial Normal", "Arial";
+}
+
+::selection {
+  background: #d6e8ec;
+}
+
+img {
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  font-size: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.notselect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.notpadding {
+  padding: 0;
+}
+
+.point {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #ff0000;
+  right: 10px;
+  top: 8px;
+  z-index: 9;
+}
+
+.red-warning {
+  border: 1px solid #FF0000 !important;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  padding-right: 5px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  background: rgba(187, 187, 187, 0.8);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(187, 187, 187, 0.4);
+}
+
+.bottom-shadow {
+  box-shadow: 0 0 10px 0 #222;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+}

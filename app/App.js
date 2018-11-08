@@ -1,4 +1,8 @@
 import React, {Component} from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer'
+
+import './app.scss'
 
 class App extends Component {
     constructor(props) {
@@ -8,8 +12,12 @@ class App extends Component {
 
     render() {
         return (
-            <h3>Originoo</h3>
-        );
+            <div className="app">
+                <Header/>
+                <h3> Originoo </h3>
+                <Footer/>
+            </div>
+        )
     }
 }
 
