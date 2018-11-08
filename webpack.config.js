@@ -4,6 +4,11 @@ const HtmlPlugin = require('html-webpack-plugin');
 const ExtraPulgin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
+const extScss = new ExtraPulgin({
+    filename: "style.css",
+    disable: true
+});
+
 module.exports = {
     devtool: 'inline-source-map',
     entry: {
@@ -50,7 +55,8 @@ module.exports = {
         new HtmlPlugin({
             template: 'app/index.temp.html'
         }),
-        new ExtraPulgin('style.css'),
+        // new ExtraPulgin('style.css'),
+        extScss,
         new CleanWebpackPlugin(['build']),
     ]
 }
