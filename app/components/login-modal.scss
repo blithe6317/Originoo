@@ -1,0 +1,47 @@
+.login-modal {
+
+  .ant-modal-header .ant-modal-title {
+    text-align: center;
+    font-weight: 600;
+    color: #fb1;
+  }
+  .ant-modal-body {
+    .content-item {
+      margin-top: 20px;
+      .ant-input {
+        height: 34px;
+      }
+    }
+    .content-item:first-child {
+      margin-top: 0px;
+    }
+    a {
+      font-size: 12px;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+  .ant-modal-footer {
+    text-align: center;
+    .ant-btn {
+      width: 100%;
+      background-color: #fb1;
+      border-color: #fb1;
+    }
+  }
+
+  .login-yzm-box {
+    width: 140px;
+    img {
+      margin: 1px;
+      height: 100px;
+      height: 30px;
+      float: left;
+    }
+    .ant-btn-circle {
+      background-color: rgba(0, 0, 0, 0);
+      border: none;
+    }
+  }
+}

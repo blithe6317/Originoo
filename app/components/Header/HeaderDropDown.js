@@ -9,7 +9,7 @@ class HeaderDropDown extends React.Component {
     }
 
     render() {
-        const {title, menu} = this.props;
+        const {title, menu, type} = this.props;
 
         const menus = (
             <Menu>
@@ -23,7 +23,7 @@ class HeaderDropDown extends React.Component {
             </Menu>
         );
         return (
-            <div className={'dropdown-box ' + this.props.className}>
+            <div className={'dropdown-box ' + (type === 'first' ? 'first-child' : '')}>
                 <Dropdown overlay={menus}>
                     <a className="ant-dropdown-link" href="#">
                         {title} <Icon type="down"/>

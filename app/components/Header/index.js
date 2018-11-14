@@ -1,6 +1,7 @@
 import React from 'react';
-import HeaderDropDown from './HeaderDropDown'
-import Logo from '../Logo'
+import HeaderDropDown from './HeaderDropDown';
+import Logo from '../Logo';
+import HeaderUserInfo from './HeaderUserInfo';
 
 import './index.scss'
 
@@ -19,11 +20,21 @@ class Header extends React.Component {
             title: '言情',
             type: 'ff'
         }];
+        const title2 = '漫画';
+        const menu2 = [{
+            title: '热血',
+            type: 'hot'
+        }, {
+            title: '言情',
+            type: 'ff'
+        }];
         return (
-            <div className="header">
+            <div className="header clearfix">
                 <Logo/>
-                <HeaderDropDown title={title1} menu={menu1} className="first-child"/>
-                <HeaderDropDown title={title1} menu={menu1}/>
+                <HeaderDropDown title={title1} menu={menu1} type="first"/>
+                <HeaderDropDown title={title2} menu={menu2}/>
+                <HeaderUserInfo/>
+
             </div>
         )
     }
