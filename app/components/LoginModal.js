@@ -1,5 +1,7 @@
 import React from 'react';
 import {Modal, Button, Input, Icon} from 'antd';
+import InputReg from './InputReg';
+import {yzmReg, pwReg} from '../util';
 
 import {connect} from 'react-redux';
 
@@ -41,17 +43,23 @@ class LoginModal extends React.Component {
         });
     }
 
-    handleLoginOk(e) {
+    handleLoginOk() {
         const {name, password, yzm} = this.state;
         const value = {
             name, password, yzm
         }
-        
-        this.props.onLoginIn(value);
+        debugger
+        if (this.refs.pwInput.isValid() && this.refs.yzmInput.isValid()) {
+            this.props.onLoginIn(value);
+        }
     }
 
     handleLoginCancel(e) {
         this.props.onCloseLoginModal();
+    }
+
+    handleKeyDown(e) {
+        this.handleLoginOk(e)
     }
 
     render() {
@@ -77,23 +85,30 @@ class LoginModal extends React.Component {
                 ]}
             >
                 <div className="content-item">
-                    <Input
+                    <InputReg
                         addonBefore="账号"
                         value={name}
                         onChange={(e) => this.handleName(e)}
                     />
                 </div>
                 <div className="content-item">
-                    <Input
+                    <InputReg
+                        ref='pwInput'
+                        regex={pwReg}
+                        regexText="密码首位为大写字母，最少六位"
                         addonBefore="密码"
                         value={password}
                         onChange={(e) => this.handlePassword(e)}
                     />
                 </div>
                 <div className="content-item">
-                    <Input
+                    <InputReg
+                        ref='yzmInput'
+                        regex={yzmReg}
+                        regexText="验证码为4位数字"
                         addonBefore="验证码"
                         addonAfter={yzmBox}
+                        onKeyDown={(e) => this.handleKeyDown(e)}
                         value={yzm}
                         onChange={(e) => this.handleYzm(e)}
                     />

@@ -11,6 +11,11 @@
       .ant-input {
         height: 34px;
       }
+      .ant-input-wrapper {
+        .ant-input-group-addon:first-child {
+          width: 90px;
+        }
+      }
     }
     .content-item:first-child {
       margin-top: 0px;
@@ -43,5 +48,16 @@
       background-color: rgba(0, 0, 0, 0);
       border: none;
     }
+  }
+  .ant-input.input-error {
+    border-color: red;
+  }
+  .ant-input.input-error:hover {
+    border-color: red;
+  }
+  .ant-input.input-error:focus {
+    -webkit-box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.2);
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.2);
+    border-right-width: 1px !important;
   }
 }

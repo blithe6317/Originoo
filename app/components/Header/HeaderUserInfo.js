@@ -1,9 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Button} from 'antd';
+import {Button, Avatar} from 'antd';
 import LoginModal from '../LoginModal';
 
-import CircleImg from "../CircleImg";
 
 import './header-userinfo.scss'
 
@@ -46,10 +45,9 @@ class HeaderUserInfo extends React.Component {
         return (
             <div className="header-userinfo">
                 {
-                    userInfo ? <CircleImg
-                            type="small"
-                            style={{marginTop: '2px', marginLeft: '15px', float: 'right'}}
-                            src="http://originoo-1.b0.upaiyun.com//sys/2018/01/11/p_idw1v85m8jdqkew2wnblg87g77t5usgy.jpg!originoo"/>
+                    userInfo ?
+                        <Avatar
+                            src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"/>
                         :
                         loginBox
                 }
