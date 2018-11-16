@@ -1,7 +1,8 @@
 import React from 'react';
 import {Modal, Button, Input, Icon} from 'antd';
 import InputReg from './InputReg';
-import {yzmReg, pwReg} from '../util';
+import {yzmReg, pwReg} from '../util/regex';
+import {setJSON} from '../util/localStorage';
 
 import {connect} from 'react-redux';
 
@@ -48,7 +49,6 @@ class LoginModal extends React.Component {
         const value = {
             name, password, yzm
         }
-        debugger
         if (this.refs.pwInput.isValid() && this.refs.yzmInput.isValid()) {
             this.props.onLoginIn(value);
         }
@@ -59,7 +59,9 @@ class LoginModal extends React.Component {
     }
 
     handleKeyDown(e) {
-        this.handleLoginOk(e)
+        if (e.keyCode === 13) {
+            this.handleLoginOk()
+        }
     }
 
     render() {
@@ -131,6 +133,8 @@ const mapDispatchToProps = dispatch => ({
     },
     onLoginIn: (value) => {
         dispatch({type: 'login-in', value});
+        setJSON('userInfo', value);
+        dispatch({type: 'login-show-modal', value: false});
     }
 });
 

@@ -14,11 +14,14 @@ class InputReg extends React.Component {
     }
 
     handleChange(e) {
+        const {
+            onChange
+        } = this.props;
         this.setState({
             val: e.target.value
         });
-
         this.isValid();
+        onChange(e);
     }
 
     isValid() {
@@ -54,23 +57,23 @@ class InputReg extends React.Component {
         return false;
     }
 
-    handleKeyDown() {
+    handleKeyDown(e) {
         const {
             onKeyDown
         } = this.props;
         const {isValid} = this.state;
         if (isValid && onKeyDown) {
-            onKeyDown();
+            onKeyDown(e);
         }
     }
 
-    handleKeyUp() {
+    handleKeyUp(e) {
         const {
             onKeyUp
         } = this.props;
         const {isValid} = this.state;
         if (isValid && onKeyUp) {
-            onKeyUp();
+            onKeyUp(e);
         }
     }
 
@@ -115,9 +118,9 @@ class InputReg extends React.Component {
                     className={className === undefined ? '' : className}
                     addonBefore={addonBefore === undefined ? '' : addonBefore}
                     addonAfter={addonAfter === undefined ? '' : addonAfter}
-                    onKeyDown={() => this.handleKeyDown()}
-                    onKeyUp={() => this.handleKeyUp()}
-                    onFocus={(e) => this.isValid()}
+                    onKeyDown={(e) => this.handleKeyDown(e)}
+                    onKeyUp={(e) => this.handleKeyUp(e)}
+                    onFocus={() => this.isValid()}
                     onChange={(e) => this.handleChange(e)}
                     onMouseOver={() => this.handleHover()}
                     onMouseLeave={() => this.handleLeave()}

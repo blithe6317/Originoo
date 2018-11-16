@@ -116,15 +116,8 @@ a {
   padding: 0;
 }
 
-.point {
-  position: absolute;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: #ff0000;
-  right: 10px;
-  top: 8px;
-  z-index: 9;
+.pointer {
+  cursor: pointer;
 }
 
 .red-warning {
