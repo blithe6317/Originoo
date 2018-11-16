@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import Header from './components/Header';
-import Footer from './components/Footer'
+import Footer from './components/Footer';
+import Home from './containers/Home';
+import Personal from './containers/Personal';
 
 import './app.scss'
 
@@ -12,11 +15,14 @@ class App extends Component {
 
     render() {
         return (
-            <div className="app">
-                <Header/>
-                <h3> Originoo </h3>
-                <Footer/>
-            </div>
+            <Router>
+                <div className="app">
+                    <Header/>
+                    <Route exact path="/" component={Home}/>
+                    <Route exact path="/personal" component={Personal}/>
+                    <Footer/>
+                </div>
+            </Router>
         )
     }
 }

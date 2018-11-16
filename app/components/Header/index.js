@@ -2,6 +2,7 @@ import React from 'react';
 import HeaderDropDown from './HeaderDropDown';
 import Logo from '../Logo';
 import HeaderUserInfo from './HeaderUserInfo';
+import {Link} from 'react-router-dom';
 
 import './index.scss'
 
@@ -30,7 +31,9 @@ class Header extends React.Component {
         }];
         return (
             <div className="header clearfix">
-                <Logo/>
+                <Link to="/">
+                    <Logo/>
+                </Link>
                 <HeaderDropDown title={title1} menu={menu1} type="first"/>
                 <HeaderDropDown title={title2} menu={menu2}/>
                 <HeaderUserInfo/>
