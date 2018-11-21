@@ -99,6 +99,14 @@ a {
   display: block;
 }
 
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
 .container {
   width: 100%;
   margin: 0 auto;
@@ -114,6 +122,10 @@ a {
 
 .notpadding {
   padding: 0;
+}
+
+.notborder {
+  border: none;
 }
 
 .pointer {

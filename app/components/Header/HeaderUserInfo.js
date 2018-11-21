@@ -56,6 +56,8 @@ class HeaderUserInfo extends React.Component {
     render() {
         const {userInfo, isOpenDrawer} = this.state;
         const loginBox = <div className="login-hint-box right">
+
+            <div className="left mr15">客服电话：4000-365-890</div>
             <div className="left mr15">请登录</div>
             <div className="left login-button-group">
                 <Button type="primary"

@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
 const ExtraPulgin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const extScss = new ExtraPulgin({
     filename: "style.css",
@@ -58,5 +59,11 @@ module.exports = {
         // new ExtraPulgin('style.css'),
         extScss,
         new CleanWebpackPlugin(['build']),
+        new CopyWebpackPlugin([
+            {
+                from: path.resolve(__dirname, 'app/static/img/favicon.ico'),
+                to: path.resolve(__dirname, 'build')
+            }
+        ])
     ]
 }

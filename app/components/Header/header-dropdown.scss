@@ -1,8 +1,48 @@
 .dropdown-box {
   float: left;
-  margin-left: 30px;
-  line-height: 34px;
+  height: 48px;
+  margin: 0 0 2px 30px;
+  padding: 14px 8px;
   &.first-child {
     margin-left: 80px;
+  }
+  .ant-dropdown-link {
+    line-height: 20px;
+    color: #fff;
+    .point {
+      position: absolute;
+      top: -5px;
+      right: -100%;
+      background-color: #FF0000;
+      border-radius: 8px;
+      height: 16px;
+      font-size: 12px;
+      line-height: 16px;
+      padding: 0 3px;
+    }
+  }
+  &:hover {
+    border-bottom: 2px solid #fff;
+  }
+}
+
+.menu-submenu-box {
+  .ant-dropdown-menu {
+    width: 620px;
+    padding: 4px 5px;
+    zoom: 1;
+    &:after {
+      content: ".";
+      display: block;
+      height: 0;
+      font-size: 0;
+      clear: both;
+      visibility: hidden;
+    }
+    .ant-dropdown-menu-item {
+      width: 120px;
+      clear: none;
+      float: left;
+    }
   }
 }

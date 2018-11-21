@@ -14,6 +14,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
     "antd": "^3.10.4",
+    "fetch": "^1.1.0",
     "mockjs": "^1.0.1-beta3",
     "prop-types": "^15.6.2",
     "react": "^16.6.1",
@@ -21,8 +22,8 @@
     "react-redux": "^5.1.0",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "reactjs-swiper": "^0.1.0",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
@@ -32,6 +33,7 @@
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
     "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^1.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-react": "^7.11.1",

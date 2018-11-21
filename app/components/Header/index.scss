@@ -1,9 +1,9 @@
 .header {
-  padding: 8px 50px;
+  padding: 0px 50px;
   height: 50px;
-  position: relative;
-  background: -webkit-linear-gradient(to bottom, #eee, #fff, #fff, #fff, #eee); /* Safari 5.1 - 6.0 */
-  background: -o-linear-gradient(to bottom, #eee, #fff, #fff, #fff, #eee); /* Opera 11.1 - 12.0 */
-  background: -moz-linear-gradient(to bottom, #eee, #fff, #fff, #fff, #eee); /* Firefox 3.6 - 15 */
-  background: linear-gradient(to bottom, #eee, #fff, #fff, #fff, #eee);
+  background: rgba(0, 0, 0, .2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
