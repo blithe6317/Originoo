@@ -1,8 +1,9 @@
 import React from 'react';
+import { Layout } from 'antd';
 import HeaderDropDown from './HeaderDropDown';
 import Logo from '../Logo';
 import HeaderUserInfo from './HeaderUserInfo';
-import {Link} from 'react-router-dom';
+
 
 import './index.scss'
 
@@ -144,18 +145,18 @@ class Header extends React.Component {
             }]
         };
         return (
-            <div className="header clearfix">
-                <Link to="/">
-                    <Logo/>
-                </Link>
-                <HeaderDropDown point={point} menu={menu1} type="first"/>
-                <HeaderDropDown menu={menu2}/>
-                <HeaderDropDown menu={menu3}/>
-                <HeaderDropDown menu={menu4}/>
-                <HeaderDropDown point={point2} menu={menu5}/>
-                <HeaderDropDown menu={menu6}/>
-                <HeaderUserInfo/>
-            </div>
+            <Layout.Header className="header clearfix">
+
+                <Logo />
+
+                <HeaderDropDown point={point} menu={menu1} type="first" />
+                <HeaderDropDown menu={menu2} />
+                <HeaderDropDown menu={menu3} />
+                <HeaderDropDown menu={menu4} />
+                <HeaderDropDown point={point2} menu={menu5} />
+                <HeaderDropDown menu={menu6} />
+                <HeaderUserInfo />
+            </Layout.Header>
         )
     }
 }

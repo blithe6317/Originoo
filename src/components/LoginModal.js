@@ -1,13 +1,13 @@
 import React from 'react';
-import {Modal, Button, Input, Icon} from 'antd';
+import { Modal, Button, Input, Icon } from 'antd';
 import InputReg from './InputReg';
-import {yzmReg, pwReg} from '../util/regex';
-import {setJSON} from '../util/localStorage';
+import { yzmReg, pwReg } from '../util/regex';
+import { setJSON } from '../util/localStorage';
 
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 import './login-modal.scss'
-import yzmImg from '../static/img/yzm.png';
+import yzmImg from '../assets/img/yzm.png';
 
 class LoginModal extends React.Component {
     constructor(props) {
@@ -21,9 +21,9 @@ class LoginModal extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        const {hasLoginModal, userInfo} = nextProps;
-        this.setState({hasLoginModal: hasLoginModal});
-        this.setState({userInfo: userInfo});
+        const { hasLoginModal, userInfo } = nextProps;
+        this.setState({ hasLoginModal: hasLoginModal });
+        this.setState({ userInfo: userInfo });
     };
 
     handleName(e) {
@@ -45,7 +45,7 @@ class LoginModal extends React.Component {
     }
 
     handleLoginOk() {
-        const {name, password, yzm} = this.state;
+        const { name, password, yzm } = this.state;
         const value = {
             name, password, yzm
         }
@@ -65,10 +65,10 @@ class LoginModal extends React.Component {
     }
 
     render() {
-        const {name, password, yzm} = this.state;
+        const { name, password, yzm } = this.state;
         const yzmBox = <div className="login-yzm-box">
-            <img src={yzmImg}/>
-            <Button shape="circle" icon="redo"/>
+            <img src={yzmImg} />
+            <Button shape="circle" icon="redo" />
         </div>;
         return (
             <Modal
@@ -129,12 +129,12 @@ const mapStateToProps = state => (state.loginStore);
 
 const mapDispatchToProps = dispatch => ({
     onCloseLoginModal: () => {
-        dispatch({type: 'login-show-modal', value: false});
+        dispatch({ type: 'login-show-modal', value: false });
     },
     onLoginIn: (value) => {
-        dispatch({type: 'login-in', value});
+        dispatch({ type: 'login-in', value });
         setJSON('userInfo', value);
-        dispatch({type: 'login-show-modal', value: false});
+        dispatch({ type: 'login-show-modal', value: false });
     }
 });
 

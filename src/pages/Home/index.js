@@ -1,11 +1,11 @@
 import React from 'react';
 import Swiper from 'react-id-swiper';
-import {Button} from 'antd';
+import { Button } from 'antd';
 
 import SkipModuleBox from './SkipModuleBox';
 
 import './index.scss'
-import '../../static/css/swiper.min.css'
+import '../../assets/css/swiper.min.css'
 
 class Home extends React.Component {
 
@@ -59,7 +59,7 @@ class Home extends React.Component {
                     {
                         swipers.map((swiper, index) => (
                             <div key={index}
-                                 style={{backgroundImage: `url(${swiper.img})`}}>
+                                style={{ backgroundImage: `url(${swiper.img})` }}>
                             </div>
                         ))
                     }
@@ -70,9 +70,9 @@ class Home extends React.Component {
                     张图片，昨日新增
                     <span className="number">33,414</span>
                     张
-                    <Button className="clear-btn" style={{color: '#ffa40d'}}>立即购买 >></Button>
+                    <Button className="clear-btn" style={{ color: '#ffa40d' }}>立即购买 >></Button>
                 </p>
-                <SkipModuleBox skips={skips}/>
+                <SkipModuleBox skips={skips} />
             </div>
         )
     }

@@ -1,12 +1,12 @@
 import React from 'react';
-import logoImg from '../static/img/logo.png'
+import logoImg from '../assets/img/logo.png'
 import './logo.scss'
 
 class Logo extends React.Component {
     render() {
         return (
             <div className="logo">
-                <img src={logoImg}/>
+                <img src={logoImg} />
             </div>
         )
     }
