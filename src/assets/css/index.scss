@@ -99,6 +99,11 @@ a {
   display: block;
 }
 
+.default-background {
+  background-size: cover;
+  background: center no-repeat;
+}
+
 .relative {
   position: relative;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout } from 'antd';
+import {Layout} from 'antd';
 import HeaderDropDown from './HeaderDropDown';
 import Logo from '../Logo';
 import HeaderUserInfo from './HeaderUserInfo';
@@ -146,16 +146,14 @@ class Header extends React.Component {
         };
         return (
             <Layout.Header className="header clearfix">
-
-                <Logo />
-
-                <HeaderDropDown point={point} menu={menu1} type="first" />
-                <HeaderDropDown menu={menu2} />
-                <HeaderDropDown menu={menu3} />
-                <HeaderDropDown menu={menu4} />
-                <HeaderDropDown point={point2} menu={menu5} />
-                <HeaderDropDown menu={menu6} />
-                <HeaderUserInfo />
+                <Logo/>
+                <HeaderDropDown point={point} menu={menu1} type="first"/>
+                <HeaderDropDown menu={menu2}/>
+                <HeaderDropDown menu={menu3}/>
+                <HeaderDropDown menu={menu4}/>
+                <HeaderDropDown point={point2} menu={menu5}/>
+                <HeaderDropDown menu={menu6}/>
+                <HeaderUserInfo/>
             </Layout.Header>
         )
     }

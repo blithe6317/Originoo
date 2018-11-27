@@ -3,11 +3,11 @@ import {Button} from 'antd';
 
 class SkipModuleBox extends React.Component {
     render() {
-        const {skips} = this.props;
+        const {data} = this.props;
         return (
             <div className="skip-modules-box clearfix">
                 {
-                    skips.map((skip, index) => (
+                    data.map((skip, index) => (
                         <div key={index} className="skip-module-item left">
                             <div className="skip-module-content" style={{backgroundImage: `url(${skip.img})`}}>
                                 <div className="skip-module-desc">

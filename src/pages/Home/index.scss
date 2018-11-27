@@ -49,4 +49,24 @@
       }
     }
   }
+  .icon-block-box {
+    width: 90%;
+    margin: 15px auto;
+    .icon-block-item {
+      width: 24%;
+      margin: 5px 0;
+      height: 250px;
+      text-align: center;
+      padding: 0 5px;
+      .icon-block-content {
+        height: 100%;
+        img {
+          margin: 40px auto 30px;
+        }
+        .title {
+          font-weight: bold;
+        }
+      }
+    }
+  }
 }

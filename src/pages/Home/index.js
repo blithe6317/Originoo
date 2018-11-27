@@ -1,8 +1,9 @@
 import React from 'react';
 import Swiper from 'react-id-swiper';
-import { Button } from 'antd';
+import {Button} from 'antd';
 
 import SkipModuleBox from './SkipModuleBox';
+import IconBlockBox from './IconBlockBox';
 
 import './index.scss'
 import '../../assets/css/swiper.min.css'
@@ -27,6 +28,7 @@ class Home extends React.Component {
                 clickable: true
             }
         }
+
         const skips = [{
             img: 'http://originoo-1.b0.upaiyun.com//sys/2018/01/11/p_idw1v85m8jdqkew2wnblg87g77t5usgy.jpg!originoo',
             text: '免费图库',
@@ -53,13 +55,48 @@ class Home extends React.Component {
             btn: '查看详情',
             href: ''
         }];
+
+        const iconBlocks = [{
+            img: 'http://originoo-1.b0.upaiyun.com/dev/sites/image/img_index/icon_index_copyright_15c1d80.png',
+            title: '版权保障',
+            texts: [{
+                color: '#f39700',
+                text: '100%正版素材'
+            }, {
+                text: '下载即授权，无侵权困扰'
+            }]
+        }, {
+            img: 'http://originoo-1.b0.upaiyun.com/dev/sites/image/img_index/icon_index_material_00330cc.png',
+            title: '海量正版素材',
+            texts: [{
+                text: '300万+正版视频'
+            }, {
+                text: '1.5亿+正版图片素材和矢量素材'
+            }]
+        }, {
+            img: 'http://originoo-1.b0.upaiyun.com/dev/sites/image/img_index/icon_index_price_587b668.png',
+            title: '低价高质',
+            texts: [{
+                text: '高品质正版图片，价格低至个位数'
+            }, {
+                text: '单张/套餐两种灵活的购买方式'
+            }]
+        }, {
+            img: 'http://originoo-1.b0.upaiyun.com/dev/sites/image/img_index/icon_index_invoice_f76823b.png',
+            title: '发票支持',
+            texts: [{
+                text: '支持普通发票和增值税发票'
+            }, {
+                text: '在线申请，随时跟踪发票状态'
+            }]
+        }];
         return (
             <div className="home-content">
                 <Swiper className="swiper-container-box" {...params}>
                     {
                         swipers.map((swiper, index) => (
                             <div key={index}
-                                style={{ backgroundImage: `url(${swiper.img})` }}>
+                                 style={{backgroundImage: `url(${swiper.img})`}}>
                             </div>
                         ))
                     }
@@ -70,9 +107,10 @@ class Home extends React.Component {
                     张图片，昨日新增
                     <span className="number">33,414</span>
                     张
-                    <Button className="clear-btn" style={{ color: '#ffa40d' }}>立即购买 >></Button>
+                    <Button className="clear-btn" style={{color: '#ffa40d'}}>立即购买 >></Button>
                 </p>
-                <SkipModuleBox skips={skips} />
+                <SkipModuleBox data={skips}/>
+                <IconBlockBox data={iconBlocks}/>
             </div>
         )
     }
