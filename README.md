@@ -59,3 +59,6 @@ reducers redux
 #### routers
 routers 路由管理
 
+
+
+以上是老版中的使用，已经改为使用umi脚手架，一些基本的介绍可以参考[简书文章](https://www.jianshu.com/p/0b536e66ac61)
