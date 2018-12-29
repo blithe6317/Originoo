@@ -19,14 +19,15 @@
   },
   "homepage": "https://github.com/blithe6317/Originoo#readme",
   "devDependencies": {
-    "antd": "^3.10.9",
     "node-sass": "^4.10.0",
     "sass-loader": "^7.1.0",
     "umi": "^2.2.7",
     "umi-plugin-react": "^1.2.3"
   },
   "dependencies": {
+    "antd": "^3.10.9",
     "fetch": "^1.1.0",
+    "mockjs":"^1.0.1-beta3",
     "prop-types": "^15.6.2",
     "react-id-swiper": "^1.6.8",
     "whatwg-fetch": "^3.0.0"
