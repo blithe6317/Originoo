@@ -1,8 +1,9 @@
 import React from 'react';
-import { Modal, Button, Input, Icon } from 'antd';
+import { Modal, Button } from 'antd';
+
+import { loginIn } from '../actions/login';
 import InputReg from './InputReg';
 import { yzmReg, pwReg } from '../util/regex';
-import { setJSON } from '../util/localStorage';
 
 import { connect } from 'react-redux';
 
@@ -50,6 +51,11 @@ class LoginModal extends React.Component {
             name, password, yzm
         }
         if (this.refs.pwInput.isValid() && this.refs.yzmInput.isValid()) {
+            this.setState({
+                name: '',
+                password: '',
+                yzm: ''
+            });
             this.props.onLoginIn(value);
         }
     }
@@ -95,6 +101,7 @@ class LoginModal extends React.Component {
                 </div>
                 <div className="content-item">
                     <InputReg
+                        type="password"
                         ref='pwInput'
                         regex={pwReg}
                         regexText="密码首位为大写字母，最少六位"
@@ -131,10 +138,8 @@ const mapDispatchToProps = dispatch => ({
     onCloseLoginModal: () => {
         dispatch({ type: 'login-show-modal', value: false });
     },
-    onLoginIn: (value) => {
-        dispatch({ type: 'login-in', value });
-        setJSON('userInfo', value);
-        dispatch({ type: 'login-show-modal', value: false });
+    onLoginIn: (params) => {
+        loginIn({ dispatch, params });
     }
 });
 

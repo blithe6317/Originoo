@@ -8,4 +8,9 @@
     left: 0;
     width: 100%;
     z-index: 9;
+
+    &.header-move,
+    &.ant-layout-content-padding {
+        background: rgba(0, 0, 0, 1);
+    }
 }

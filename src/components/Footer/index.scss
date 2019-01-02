@@ -1,4 +1,48 @@
-.footer {
-  background-color: #000;
-  color: #fff;
+.footer.ant-layout-footer {
+    width: 100%;
+    background-color: #292929;
+    color: #fff;
+
+    .footer-about-me {
+        min-width: 1200px;
+        margin: 0 auto;
+        padding: 10px 0 20px;
+
+        .footer-about-other {
+            height: 40px;
+            border-top: 1px solid #4b4b4b;
+            border-bottom: 1px solid #4b4b4b;
+            margin-bottom: 10px;
+            line-height: 40px;
+            color: #c6c6c6;
+            font-size: 14px;
+
+            span {
+                padding-left: 26px;
+
+                &:first-child {
+                    padding-left: 0;
+                }
+            }
+        }
+
+        .footer-about-link-box {
+            width: 100%;
+
+            .footer-about-link-list {
+                width: 20%;
+
+                .title {
+                    color: #F2F2F2;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    .footer-company {
+        width: 100%;
+        color: #6e6f6f;
+        text-align: left;
+    }
 }

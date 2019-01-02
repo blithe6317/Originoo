@@ -1,0 +1,95 @@
+.user-center-layout {
+    width: 96%;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px 0;
+
+    .gutter-example .ant-row > div {
+        background: transparent;
+        border: 0;
+    }
+
+    .gutter-box {
+        text-align: center;
+    }
+
+    .user-info-box {
+        .user-name {
+            font-size: 16px;
+        }
+
+        .progress-label {
+            font-size: 12px;
+        }
+    }
+
+    .user-center {
+        .ant-card-head {
+            border-bottom: none;
+            min-height: 32px;
+            padding: 0 15px;
+
+            .ant-card-head-title {
+                padding: 16px 5px 5px;
+                font-weight: bold;
+            }
+        }
+
+        .ant-card-body {
+            padding: 10px 15px;
+            position: relative;
+
+            .recharge-btn {
+                float: right;
+                margin: 20px 10px;
+            }
+        }
+
+        .user-center-desc {
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+
+            .ant-col-8 {
+                padding: 5px 10px;
+                border-left: 1px solid #eee;
+
+                &:first-child {
+                    border-left: none;
+                }
+
+                .number {
+                    font-size: 32px;
+                    color: red;
+                }
+            }
+        }
+
+        .help-center-card {
+            .ant-card-body {
+                text-align: left;
+                font-size: 12px;
+
+                li {
+                    padding-bottom: 4px;
+                }
+            }
+        }
+    }
+
+    .new-download-card {
+        .ant-btn {
+            width: 120px;
+            margin-right: 20px;
+
+            &.active {
+                background-color: #1fb07a;
+                color: white;
+                border-color: #1fb07a;
+
+                &:hover {
+                    background-color: #1cc084;
+                }
+            }
+        }
+    }
+}

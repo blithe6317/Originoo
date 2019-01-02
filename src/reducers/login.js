@@ -1,4 +1,4 @@
-import {getJSON} from '../util/localStorage';
+import { getJSON } from '../util/localStorage';
 
 const initStore = {
     userInfo: getJSON('userInfo'),
@@ -7,7 +7,6 @@ const initStore = {
 }
 
 const loginStore = (state = initStore, action) => {
-    console.log('type:', action.type + '__' + action.value)
     switch (action.type) {
         case 'login-in':
             return {

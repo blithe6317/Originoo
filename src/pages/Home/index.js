@@ -1,14 +1,19 @@
 import React from 'react';
 import Swiper from 'react-id-swiper';
-import {Button} from 'antd';
+import { Button } from 'antd';
 
 import SkipModuleBox from './SkipModuleBox';
 import IconBlockBox from './IconBlockBox';
+import DirectoryShowBlock from './DirectoryShowBlock';
+import Customers from './Customers';
 
 import './index.scss'
 import '../../assets/css/swiper.min.css'
 
 class Home extends React.Component {
+    componentDidMount() {
+
+    }
 
     render() {
         const swipers = [{
@@ -90,15 +95,75 @@ class Home extends React.Component {
                 text: '在线申请，随时跟踪发票状态'
             }]
         }];
+        const directoryData = {
+            title: '正版图片素材',
+            btns: [{
+                text: '金融理财',
+                href: ''
+            }, {
+                text: '美容美妆',
+                href: ''
+            }, {
+                text: '医疗护理',
+                href: ''
+            }, {
+                text: '城市风光',
+                href: ''
+            }, {
+                text: '自然风貌',
+                href: ''
+            }, {
+                text: '团队沟通',
+                href: ''
+            }, {
+                text: '激情足球',
+                href: ''
+            }, {
+                text: '动物世界',
+                href: ''
+            }, {
+                text: '人工智能',
+                href: ''
+            }, {
+                text: '清凉夏日',
+                href: ''
+            }],
+            picBoxs: [{
+                title: '冬日温馨素材合集',
+                img: 'http://originoo-1.b0.upaiyun.com//sys/2018/11/08/p_hsbymf8xu0xu8rhzpwuyggnjdk89pyr1.jpg!originoo',
+                href: ''
+            }, {
+                title: '儿童教育素材合集',
+                img: 'http://originoo-1.b0.upaiyun.com//sys/2018/10/12/p_ptbf8rhlzewod6juf69ahakmpelyv8n0.jpg!originoo',
+                href: ''
+            }, {
+                title: '创意海报模板精选',
+                img: 'http://originoo-1.b0.upaiyun.com//sys/2018/11/01/p_vcfnawgkdsiaj15g952b2bzj7mjpfch1.jpg!originoo',
+                href: ''
+            }, {
+                title: '商务办公场景合集',
+                img: 'http://originoo-1.b0.upaiyun.com//sys/2018/09/20/p_vj2bg01v6nx1bjzhnnktai06qdz27iwy.jpg!originoo',
+                href: ''
+            }, {
+                title: '国内旅游胜地',
+                img: 'http://originoo-1.b0.upaiyun.com//sys/2018/09/30/p_8dt5ivvwr7ezepv5jh7wzu0c37qbffpd.jpg!originoo',
+                href: ''
+            }, {
+                title: '温馨宠物合集',
+                img: 'http://originoo-1.b0.upaiyun.com//sys/2018/10/18/p_ick2eyale1azygv5742ggr06pkkcdi67.jpg!originoo',
+                href: ''
+            }]
+        };
         return (
             <div className="home-content">
                 <Swiper className="swiper-container-box" {...params}>
                     {
                         swipers.map((swiper, index) => (
                             <div key={index}
-                                 style={{backgroundImage: `url(${swiper.img})`}}>
+                                style={{ backgroundImage: `url(${swiper.img})` }}>
                             </div>
                         ))
+
                     }
                 </Swiper>
                 <p className="text-online">
@@ -107,10 +172,12 @@ class Home extends React.Component {
                     张图片，昨日新增
                     <span className="number">33,414</span>
                     张
-                    <Button className="clear-btn" style={{color: '#ffa40d'}}>立即购买 >></Button>
+                    <Button className="clear-btn" style={{ color: '#ffa40d' }}>立即购买 >></Button>
                 </p>
-                <SkipModuleBox data={skips}/>
-                <IconBlockBox data={iconBlocks}/>
+                <SkipModuleBox data={skips} />
+                <IconBlockBox data={iconBlocks} />
+                <DirectoryShowBlock data={directoryData} />
+                <Customers />
             </div>
         )
     }

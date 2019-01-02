@@ -1,4 +1,6 @@
 import React from 'react';
+import Link from 'umi/link';
+import router from 'umi/router';
 import { connect } from 'react-redux';
 import { Button, Avatar, Drawer } from 'antd';
 import LoginModal from '../LoginModal';
@@ -51,6 +53,7 @@ class HeaderUserInfo extends React.Component {
     loginout() {
         this.props.onLoginOut();
         this.closeDrawer();
+        router.push('/index');
     }
 
     render() {
@@ -78,9 +81,14 @@ class HeaderUserInfo extends React.Component {
             </div>
         </div>;
         const userDrawer = <div>
-            <Avatar className="pointer"
+            {/* <Avatar className="pointer"
                 onClick={() => this.openDrawer()}
-                src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                src={userInfo ? userInfo.avatar : ''} /> */}
+            <Avatar
+                className="pointer"
+                size={32}
+                onClick={() => this.openDrawer()}
+                icon="user" />
             <Drawer
                 title={userInfo ? userInfo.name : ''}
                 placement="right"
@@ -89,7 +97,7 @@ class HeaderUserInfo extends React.Component {
                 className="clearfix"
             >
                 <div className="mb10">
-                    <p>个人中心</p>
+                    <p><Link to='/user-center/center' onClick={() => this.closeDrawer()}>个人中心</Link></p>
                     <p>发现新大陆</p>
                     <p>敬请期待</p>
                 </div>

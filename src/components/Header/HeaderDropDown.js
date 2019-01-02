@@ -1,6 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import {Menu, Dropdown} from 'antd';
+import { Link } from 'react-router-dom';
+import { Menu, Dropdown } from 'antd';
 import PropTypes from 'prop-types';
 import './header-dropdown.scss';
 
@@ -10,14 +10,14 @@ class HeaderDropDown extends React.Component {
     }
 
     render() {
-        const {menu, type, point} = this.props;
-        const {title, href, children} = menu;
+        const { menu, type, point } = this.props;
+        const { title, href, children } = menu;
         const getMenu = (menu, index) => {
             return (
                 <Menu.Item key={menu.title + index}>
                     {
                         menu.href ? (
-                            <Link target="_blank" rel="noopener noreferrer" to={menu.href}>{menu.title}</Link>
+                            <Link rel="noopener noreferrer" to={menu.href}>{menu.title}</Link>
                         ) : menu.title
                     }
 
@@ -35,8 +35,8 @@ class HeaderDropDown extends React.Component {
                                 }
                             </Menu.SubMenu>
                         ) : (
-                            getMenu(men, index)
-                        )
+                                getMenu(men, index)
+                            )
                     ))
                 }
             </Menu>
@@ -61,7 +61,7 @@ class HeaderDropDown extends React.Component {
             }
             aLink = <Link className="ant-dropdown-link relative" to={href}>
                 {title}
-                <div className="point" style={{backgroundColor: color}}>{text}</div>
+                <div className="point" style={{ backgroundColor: color }}>{text}</div>
             </Link>;
         }
 

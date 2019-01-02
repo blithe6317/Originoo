@@ -1,0 +1,57 @@
+.piclist-container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+
+    .condition-filter-box {
+        .condition-button {
+            width: 120px;
+            margin-right: 20px;
+
+            &:hover {
+                border-color: #fad190;
+                color: #666;
+            }
+
+            &.sort-btn {
+                &.active {
+                    color: #666;
+                    border-color: #f39700;
+                    background-color: #fcfaf8;
+
+                    i.anticon {
+                        color: #f39700;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.condition-composition-menu {
+    .ant-dropdown-menu-item {
+        &.active {
+            background-color: #fcd699;
+        }
+    }
+}
+
+.condition-personaecolor-menu {
+    .ant-dropdown-menu-item {
+        cursor: default;
+
+        &:hover {
+            background-color: initial;
+        }
+
+        .ant-btn {
+            margin-right: 15px;
+        }
+
+        &.color-menu-item {
+            .ant-btn {
+                margin-right: 3px;
+            }
+        }
+    }
+}

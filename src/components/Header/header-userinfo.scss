@@ -1,9 +1,13 @@
 .header-userinfo {
-  float: right;
-  .login-hint-box {
-    line-height: 50px;
-    float: left;
-    color: #fff;
-  }
-}
+    float: right;
 
+    .login-hint-box {
+        line-height: 50px;
+        float: left;
+        color: #fff;
+    }
+
+    .ant-avatar {
+        margin-top: 9px;
+    }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
-import {Layout} from 'antd';
+import { Layout, Affix } from 'antd';
+import Link from 'umi/link';
 import HeaderDropDown from './HeaderDropDown';
 import Logo from '../Logo';
 import HeaderUserInfo from './HeaderUserInfo';
@@ -10,13 +11,29 @@ import './index.scss'
 class Header extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            headerclass: 'header-move'
+        };
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.scrollHandler);
+    }
+
+    scrollHandler = (event) => {
+        let scrollTop = window.pageYOffset;
+        if (scrollTop > 120) {
+            this.setState({ headerclass: 'header-move' })
+        } else {
+            this.setState({ headerclass: '' })
+        }
     }
 
     render() {
+        const { className } = this.props;
         const menu1 = {
             title: '免费',
-            href: '#'
+            href: '/piclist'
         };
         const menu2 = {
             title: '素材',
@@ -145,16 +162,20 @@ class Header extends React.Component {
             }]
         };
         return (
-            <Layout.Header className="header clearfix">
-                <Logo/>
-                <HeaderDropDown point={point} menu={menu1} type="first"/>
-                <HeaderDropDown menu={menu2}/>
-                <HeaderDropDown menu={menu3}/>
-                <HeaderDropDown menu={menu4}/>
-                <HeaderDropDown point={point2} menu={menu5}/>
-                <HeaderDropDown menu={menu6}/>
-                <HeaderUserInfo/>
-            </Layout.Header>
+            <Affix offsetTop={0}>
+                <Layout.Header ref='header' className={className + " header clearfix " + this.state.headerclass}>
+                    <Link to="/index">
+                        <Logo />
+                    </Link>
+                    <HeaderDropDown point={point} menu={menu1} type="first" />
+                    <HeaderDropDown menu={menu2} />
+                    <HeaderDropDown menu={menu3} />
+                    <HeaderDropDown menu={menu4} />
+                    <HeaderDropDown point={point2} menu={menu5} />
+                    <HeaderDropDown menu={menu6} />
+                    <HeaderUserInfo />
+                </Layout.Header>
+            </Affix>
         )
     }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Input, Tooltip} from 'antd';
+import { Input, Tooltip } from 'antd';
 
 class InputReg extends React.Component {
     constructor(props) {
@@ -11,6 +11,13 @@ class InputReg extends React.Component {
             isHover: false,
             isShowTooltip: false
         }
+    }
+
+    componentWillReceiveProps(nextProps) {
+        const { value } = nextProps;
+        this.setState({
+            val: value
+        });
     }
 
     handleChange(e) {
@@ -26,8 +33,8 @@ class InputReg extends React.Component {
 
     isValid() {
         const value = this.refs.input.input.value;
-        const {regex} = this.props;
-        let {className} = this.state;
+        const { regex } = this.props;
+        let { className } = this.state;
 
         className = className ? className : '';
         if (!regex) {
@@ -61,7 +68,7 @@ class InputReg extends React.Component {
         const {
             onKeyDown
         } = this.props;
-        const {isValid} = this.state;
+        const { isValid } = this.state;
         if (isValid && onKeyDown) {
             onKeyDown(e);
         }
@@ -71,15 +78,15 @@ class InputReg extends React.Component {
         const {
             onKeyUp
         } = this.props;
-        const {isValid} = this.state;
+        const { isValid } = this.state;
         if (isValid && onKeyUp) {
             onKeyUp(e);
         }
     }
 
     handleHover() {
-        const {isValid} = this.state;
-        const {regex} = this.props;
+        const { isValid } = this.state;
+        const { regex } = this.props;
         if (!isValid && regex) {
             this.setState({
                 isShowTooltip: true
@@ -102,9 +109,10 @@ class InputReg extends React.Component {
             defaultValue,
             addonBefore,
             addonAfter,
-            regexText
+            regexText,
+            type
         } = this.props;
-        const {className, isShowTooltip} = this.state;
+        const { className, isShowTooltip } = this.state;
         return (
             <Tooltip
                 placement="bottom"
@@ -113,6 +121,7 @@ class InputReg extends React.Component {
             >
                 <Input
                     ref='input'
+                    type={type ? type : 'text'}
                     value={this.state.val}
                     defaultValue={defaultValue === undefined ? '' : defaultValue}
                     className={className === undefined ? '' : className}
